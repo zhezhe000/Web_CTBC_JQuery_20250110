@@ -1,0 +1,75 @@
+/* 匯入Google Fonts 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif HK", 微軟正黑體;
+}
+
+/* 相片效果區域樣式 */
+.slider-container {
+    width: 100%;
+    height: 100vh;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 所有相片 */
+.slider-imgs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 相片div */
+.slider {
+    width: 150px;
+    height: 500px;
+    cursor: pointer;
+    transition: 0.6s;
+    /* 定位:父元素添加相對定位 */
+    position: relative;
+}
+
+/* 相片 */
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 選取第一張字最後一張相片 */
+/* .slider-imgs .slider:first-child */
+/* 選取 .slider-imgs 下 第一個 .slider 元素 */
+.slider-imgs .slider:first-child, .slider-imgs .slider:last-child {
+    height: 400px;
+}
+
+/* 選取指定相片 */
+/* .slider-imgs .slider:nth-child(元素標號) */
+/* 選取 .slider-imgs 下 第二個 .slider 元素 */
+.slider-imgs .slider:nth-child(2), .slider-imgs .slider:nth-child(4) {
+    height: 450px;
+}
+
+.slider h1 {
+    font-size: 36px;
+    color: white;
+    /* 定位:子元素使用絕對定位 */
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transition: 0.6s;
+}
+
+/* 相片啟動效果 */
+.slider.active {
+    width: 450px !important;
+}
+
+.slider.active h1 {
+    display: none;
+}
